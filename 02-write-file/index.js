@@ -18,5 +18,5 @@ input.on('data', chunk => {
 
 process.on('exit', () => output.write('Thank you!'));
 process.on('SIGINT', () => {
-    process.exit()
+  process.exit();
 });
