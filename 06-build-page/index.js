@@ -32,7 +32,7 @@ async function createHtml() {
 
 
 async function createDist() {
- 
+  
   await fsp.mkdir(projectDist, { recursive: true });
 }
 
@@ -40,6 +40,7 @@ async function createDist() {
 
 
 async function copyAssets(dest, source) {
+  await fsp.rm(dest, {recursive: true, force: true});
   await fsp.mkdir(dest, { recursive: true });
   const files = await fsp.readdir(source, { withFileTypes: true });
   for (let file of files) {
